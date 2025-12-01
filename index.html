@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportner - Le sport, c’est mieux ensemble</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-slate-800 antialiased overflow-x-hidden bg-brand-light">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="font-display font-black text-2xl tracking-tighter text-slate-900">SPORTNER<span class="text-brand-blue">.</span></span>
+                </div>
+
+                <!-- Desktop Menu (Hidden on Mobile) -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Fonctionnalités</a>
+                    <a href="#discover" class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Découvrez Sportner</a>
+                    <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">FAQ</a>
+                    <a href="#join-beta" class="bg-brand-blue text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition shadow-lg shadow-blue-500/30">
+                        Rejoindre la liste
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-900 hover:text-brand-blue focus:outline-none p-2 transition-colors">
+                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Vertical List) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl">
+            <div class="flex flex-col px-4 py-6 space-y-4 text-center">
+                <a href="#features" class="mobile-link block text-lg font-bold text-slate-800 hover:text-brand-blue transition py-2">
+                    Fonctionnalités
+                </a>
+                <a href="#discover" class="mobile-link block text-lg font-bold text-slate-800 hover:text-brand-blue transition py-2">
+                    Découvrez Sportner
+                </a>
+                <a href="#faq" class="mobile-link block text-lg font-bold text-slate-800 hover:text-brand-blue transition py-2">
+                    FAQ
+                </a>
+                <div class="pt-2">
+                    <a href="#join-beta" class="mobile-link inline-block w-full bg-brand-blue text-white px-6 py-4 rounded-xl text-lg font-bold shadow-lg shadow-blue-500/20 active:scale-95 transition-transform">
+                        Rejoindre la liste d'attente
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 diagonal-bg overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-500/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/4"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content Centered Mobile / Left Desktop -->
+                <div data-aos="fade-right" class="text-center lg:text-left mx-auto max-w-lg lg:max-w-none">
+                    <div class="inline-block bg-blue-500/20 text-blue-200 text-xs font-bold px-3 py-1 rounded-full mb-6 border border-blue-500/30">
+                        🚀 Lancement imminent
+                    </div>
+                    
+                    <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-7xl text-white leading-tight mb-6">
+                        Le sport, c’est mieux <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">ensemble.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed mx-auto lg:mx-0">
+                        Ne t’entraîne plus seul. Trouve ton partenaire, atteins tes objectifs et rejoins le mouvement.
+                    </p>
+                    
+                    <!-- Buttons Centered Mobile / Left Desktop -->
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
+                        <a href="#join-beta" class="group whitespace-nowrap w-full sm:w-auto bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-base md:text-lg hover:bg-blue-600 transition shadow-lg shadow-blue-500/40 flex items-center justify-center gap-3">
+                            <i class="fas fa-rocket group-hover:-translate-y-1 transition-transform duration-300"></i> 
+                            Rejoindre la liste d'attente
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center gap-4 justify-center lg:justify-start">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-slate-900 overflow-hidden"><img src="https://i.pravatar.cc/100?img=12" alt="User"></div>
+                            <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-slate-900 overflow-hidden"><img src="https://i.pravatar.cc/100?img=33" alt="User"></div>
+                            <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-slate-900 overflow-hidden"><img src="https://i.pravatar.cc/100?img=53" alt="User"></div>
+                        </div>
+                        <p class="text-slate-400 text-sm font-medium">Les sportifs arrivent bientôt - <span class="text-white font-bold">sois parmi les premiers</span></p>
+                    </div>
+                </div>
+
+                <!-- Phone Mockup -->
+                <div class="relative lg:h-[600px] flex justify-center items-center" data-aos="fade-left" data-aos-delay="200">
+                    <div class="absolute w-[400px] h-[400px] bg-brand-blue/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                    
+                    <div class="phone-mockup w-[300px] h-[600px] animate-float z-20">
+                        <div class="phone-notch"></div>
+                        <div class="w-full h-full bg-white flex flex-col relative">
+                            <div class="p-6 pt-10 flex justify-between items-center">
+                                <i class="fas fa-bars text-gray-400"></i>
+                                <span class="font-bold text-brand-blue">Sportner</span>
+                                <i class="fas fa-sliders-h text-gray-400"></i>
+                            </div>
+                            <div class="px-4 flex-1 relative">
+                                <div class="absolute top-4 left-6 right-6 h-[400px] bg-slate-100 rounded-2xl transform scale-95 translate-y-4"></div>
+                                <div class="absolute top-0 left-4 right-4 h-[400px] bg-slate-900 rounded-2xl overflow-hidden shadow-xl text-white relative">
+                                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); opacity: 0.6;"></div>
+                                    <div class="absolute bottom-0 w-full p-5 bg-gradient-to-t from-black/90 to-transparent">
+                                        <h3 class="text-2xl font-bold">Lucas, 26</h3>
+                                        <p class="text-sm opacity-90"><i class="fas fa-running mr-1"></i> Running • 5km <br> <i class="fas fa-map-marker-alt mr-1"></i> À 2km de toi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-24 px-8 flex justify-between items-center">
+                                <div class="w-12 h-12 rounded-full border border-red-500 text-red-500 flex items-center justify-center text-xl shadow-sm"><i class="fas fa-times"></i></div>
+                                <div class="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center text-2xl shadow-lg shadow-blue-500/50"><i class="fas fa-heart"></i></div>
+                                <div class="w-12 h-12 rounded-full border border-yellow-500 text-yellow-500 flex items-center justify-center text-xl shadow-sm"><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-blue font-bold tracking-wide uppercase text-sm mb-2">Fonctionnalités innovantes</h2>
+                <h3 class="font-display font-bold text-4xl text-slate-900">Rejoins les sportifs autour de toi.<br>Lance une session.</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cards content -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 text-brand-blue text-2xl group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Match Sportif Intelligent</h4>
+                    <p class="text-slate-600 leading-relaxed">Trouvez le partenaire idéal grâce à un swipe optimisé pour le sport. Notre algorithme analyse ta localisation, ton niveau et tes objectifs.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-6 text-green-600 text-2xl group-hover:bg-green-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Disponibilité Temps Réel</h4>
+                    <p class="text-slate-600 leading-relaxed">Active le mode "Disponible maintenant" et découvre qui est prêt à s’entraîner dans les prochaines minutes autour de toi.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-500 text-2xl group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Défis Géolocalisés</h4>
+                    <p class="text-slate-600 leading-relaxed">Défie les sportifs près de chez toi : courses, musculation, steps. Monte dans les classements locaux et progresse.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 text-purple-600 text-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Sports Rares & Locaux</h4>
+                    <p class="text-slate-600 leading-relaxed">Padel, escalade, pickleball ? Découvre des terrains cachés, des clubs locaux et des partenaires motivés.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 text-pink-500 text-2xl group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Groupes Sportifs</h4>
+                    <p class="text-slate-600 leading-relaxed">Crée ou rejoins des groupes : running, salle, foot, rando... Organise des sessions et intègre une communauté active.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mb-6 text-teal-600 text-2xl group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Chat & Organisation</h4>
+                    <p class="text-slate-600 leading-relaxed">Discute avec tes matchs et organisez une session. Le chat te suggère automatiquement des créneaux et des lieux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section id="discover" class="py-24 bg-brand-light overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+            <h2 class="font-display font-bold text-3xl text-slate-900">Découvrez Sportner</h2>
+        </div>
+        <div class="flex justify-center gap-8 lg:gap-16 transform scale-75 md:scale-90 lg:scale-100 overflow-x-auto pb-10 scrollbar-hide px-4">
+            <!-- Screen 1 -->
+            <div class="flex-shrink-0" data-aos="zoom-in" data-aos-delay="0">
+                 <div class="phone-mockup w-[280px] h-[580px] bg-slate-900">
+                    <div class="phone-notch"></div>
+                    <div class="w-full h-full flex items-center justify-center bg-gray-800 text-white">
+                        <div class="text-center p-4">
+                            <i class="fas fa-map-marked-alt text-5xl mb-4 text-brand-blue"></i>
+                            <h4 class="font-bold text-lg">Carte des Défis</h4>
+                            <p class="text-xs text-gray-400 mt-2">Défis en cours autour de toi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Screen 2 -->
+            <div class="flex-shrink-0 transform -translate-y-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="phone-mockup w-[280px] h-[580px] bg-white border-brand-blue shadow-2xl shadow-blue-500/30">
+                    <div class="phone-notch"></div>
+                     <div class="w-full h-full flex items-center justify-center bg-white text-slate-900">
+                        <div class="text-center p-4">
+                            <div class="w-20 h-20 rounded-full bg-green-500 mx-auto mb-4 flex items-center justify-center text-white text-3xl"><i class="fas fa-check"></i></div>
+                            <h4 class="font-bold text-2xl text-brand-blue">C'est un Match !</h4>
+                            <p class="text-xs text-gray-500 mt-2">Tu vas courir avec Sarah demain.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Screen 3 -->
+            <div class="flex-shrink-0" data-aos="zoom-in" data-aos-delay="200">
+                <div class="phone-mockup w-[280px] h-[580px] bg-slate-900">
+                    <div class="phone-notch"></div>
+                    <div class="w-full h-full flex items-center justify-center bg-gray-50 text-slate-800">
+                        <div class="text-center p-4">
+                            <i class="fas fa-comments text-5xl mb-4 text-brand-blue"></i>
+                            <h4 class="font-bold text-lg">Chat Groupe</h4>
+                            <p class="text-xs text-gray-500 mt-2">Organisation Five Jeudi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Optimized Accordion + Mobile Toggle) -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
+                <h2 class="text-brand-blue font-bold tracking-wide uppercase text-sm mb-2">Questions Fréquentes</h2>
+                <h3 class="font-display font-bold text-3xl md:text-4xl text-slate-900">Tout savoir sur Sportner</h3>
+            </div>
+
+            <!-- MOBILE MASTER BUTTON -->
+            <div class="md:hidden text-center mb-6" data-aos="fade-up" data-aos-delay="50">
+                <button onclick="toggleMasterFaq()" id="master-faq-btn" class="w-full bg-slate-50 border border-slate-200 text-slate-700 font-bold py-4 px-6 rounded-xl flex justify-between items-center shadow-sm hover:bg-slate-100 transition-all">
+                    <span id="master-btn-text">Afficher les 10 questions</span>
+                    <div class="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fas fa-chevron-down transition-transform duration-300" id="master-faq-icon"></i>
+                    </div>
+                </button>
+            </div>
+
+            <!-- MASTER CONTAINER -->
+            <div id="faq-master-container" class="hidden md:block transition-all duration-500">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="100">
+                    
+                    <!-- LEFT COL -->
+                    <div class="space-y-3">
+                         <!-- Q1 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Qu’est-ce que Sportner exactement ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Sportner est une application qui permet de trouver un partenaire sportif près de chez soi : running, fitness, foot, randonnée, et plus encore. Notre objectif est de rendre le sport plus social, motivant et accessible.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q2 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">L’application est-elle déjà disponible ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Pas encore. Nous ouvrons progressivement l’accès via une liste d’attente pour les premiers testeurs. Inscris-toi ci-dessous pour être parmi les premiers à l’essayer.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q3 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Est-ce que Sportner est gratuit ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    <strong>Oui.</strong> L'accès de base sera gratuit. Certaines fonctionnalités avancées pourront être proposées en option plus tard, mais le cœur de l’application restera accessible sans frais.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q4 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Comment fonctionnent les “matchs” ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Tu indiques tes sports, ton niveau, tes disponibilités et ta zone. L’algorithme te propose des profils compatibles. Si vous vous “likez” mutuellement, c'est un match !
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q5 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Quels sports sont disponibles ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Sportner couvre les sports populaires (running, muscu, vélo, foot...) mais aussi des sports plus rares comme l'escalade, la slackline, le pickleball ou le kayak.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COL -->
+                    <div class="space-y-3">
+                        <!-- Q6 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Les défis géolocalisés, c'est quoi ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Tu peux participer à des défis avec les sportifs proches de toi (courses, nombre de pas...). Chaque défi te permet de gagner des points et de monter dans les classements locaux.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q7 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Puis-je créer des groupes sportifs ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    <strong>Oui.</strong> Tu pourras créer des groupes pour organiser une sortie running, un match de foot, une rando... ou simplement rejoindre des groupes existants autour de toi.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q8 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Comment Sportner gère la sécurité ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Les profils doivent respecter des règles strictes (vérification). Sportner est conçu pour favoriser les rencontres sportives, pas amoureuses.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q9 -->
+                        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Pourquoi rejoindre la liste d’attente ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <ul class="list-disc pl-4 pb-5 text-slate-600 text-sm leading-relaxed space-y-1">
+                                    <li>Accès prioritaire lors du lancement</li>
+                                    <li>Tester les fonctionnalités en avant-première</li>
+                                    <li>Devenir membre fondateur</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Q10 -->
+                         <div class="border border-slate-200 rounded-xl bg-white overflow-hidden hover:border-brand-blue/30 transition-colors">
+                            <button class="faq-btn w-full text-left px-5 py-3.5 flex justify-between items-start focus:outline-none group" aria-expanded="false" onclick="toggleFaq(this)">
+                                <span class="font-semibold text-slate-900 text-sm md:text-base pr-4 group-hover:text-brand-blue transition-colors">Comment serai-je informé du lancement ?</span>
+                                <i class="fas fa-chevron-down faq-icon text-slate-400 group-hover:text-brand-blue transition-colors text-xs mt-1.5"></i>
+                            </button>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+                                    Une fois inscrit avec ton email, tu recevras une notification dès que la bêta sera disponible dans ta région pour télécharger l’app.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Beta / Newsletter (Responsive Fixed) -->
+    <section id="join-beta" class="py-24 bg-brand-blue relative overflow-hidden text-center">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-30"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="zoom-in">
+            <h2 class="font-display font-black text-4xl md:text-5xl text-white mb-6">Prêt à rencontrer ton prochain partenaire ?</h2>
+            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">L'application est en cours de conception. Inscris-toi maintenant pour obtenir un accès prioritaire et 3 mois Premium offerts au lancement.</p>
+            
+            <div class="bg-white/10 backdrop-blur-lg p-3 rounded-2xl sm:rounded-full max-w-lg mx-auto flex flex-col sm:flex-row items-center gap-3 border border-white/20 shadow-2xl">
+                <input type="email" placeholder="Ton adresse email" class="bg-transparent text-white placeholder-blue-200 px-4 py-3 flex-1 outline-none w-full text-center sm:text-left text-lg">
+                <button class="bg-white text-brand-blue px-8 py-4 rounded-xl sm:rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg w-full sm:w-auto whitespace-nowrap">
+                    Je m'inscris!
+                </button>
+            </div>
+            <p class="text-blue-200 text-xs mt-4"><i class="fas fa-lock mr-1"></i> Pas de spam. Désinscription à tout moment.</p>
+        </div>
+    </section>
+
+    <!-- Footer Updated (No Links, Clean) -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top Section: Logo & Socials -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="font-display font-black text-2xl text-white">SPORTNER<span class="text-brand-blue">.</span></span>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all transform hover:scale-110 shadow-lg shadow-slate-900/50">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all transform hover:scale-110 shadow-lg shadow-slate-900/50">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Divider & Copyright -->
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center">
+                <p class="text-xs text-slate-600">
+                    &copy; 2025 Sportner App. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

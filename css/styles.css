@@ -1,0 +1,52 @@
+.phone-mockup {
+    border: 12px solid #1e293b;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 25px;
+    background: #1e293b;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 10;
+}
+
+.diagonal-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* Smooth scrolling */
+html { 
+    scroll-behavior: smooth; 
+}
+
+/* FAQ Transition */
+.faq-answer {
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.faq-answer.active {
+    max-height: 500px; /* Large enough to fit content */
+    opacity: 1;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-btn[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+}
